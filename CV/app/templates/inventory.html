@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{{ username }}
+{% for eachBook in books %}
+<h5><a href="{{ eachBook }}">- {{ eachBook }}</a></h5>
+{% endfor %}
+
+{% endblock %}

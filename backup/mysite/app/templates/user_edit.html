@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-8">
+        <form action="." method="post" class="form-horizontal">
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h1>{{ message }}</h1>
+                {% endfor %}
+            {% else %}
+                <h4>Editing user: {{ user }} </h4>
+            {% endif %}
+            
+            <hr />
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                <div class="col-md-10">
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.email.label_tag }}
+                <div class="col-md-10">
+                    {{ form.email }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.password.label_tag }}
+                <div class="col-md-10">
+                    {{ form.password }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.phone.label_tag }}
+                <div class="col-md-10">
+                    {{ form.phone }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.address.label_tag }}
+                <div class="col-md-10">
+                    {{ form.address }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.birthdate.label_tag }}
+                <div class="col-md-10">
+                    {{ form.birthdate }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

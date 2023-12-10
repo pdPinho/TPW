@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <section id="insbookForm">
+            <form action="." method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Select an author to edit</h4>
+                <hr />
+                {% for author in authors %}
+                    <h5><a href="{{ author.id }}">- {{ author }}</a></h5>
+                {% endfor %}
+            </form>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

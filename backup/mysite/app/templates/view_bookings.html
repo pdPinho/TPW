@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}:</h2>
+{% for booking in bookings %}
+<h5><a href="bookings/{{booking.id}}">- {{ booking }}</a></h5>
+{% endfor %}
+
+
+{% endblock %}

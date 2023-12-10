@@ -1,0 +1,17 @@
+{% if user.is_authenticated %}
+<form id="logoutForm" action="/accounts/logout" method="post" class="navbar-right">
+    {% csrf_token %}
+    <ul class="nav navbar-nav navbar-right flex flex-row align-items-center me-4">
+        <li><span class="navbar-brand">Welcome back {{ user.username }}!</span></li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+
+{% else %}
+
+<ul class="nav navbar-nav navbar-right me-4">
+    <li style="padding-right: 5px"><a href="{% url 'login' %}">Log in</a></li>
+    <li><a href="{% url 'register' %}">Register</a></li>
+</ul>
+
+{% endif %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if insert %}
+    <p style="text-align:center">User inserted successfully</p>
+{% else %}
+<div class="row">
+    <div class="col-md-8">
+        <section id="insbookForm">
+            <form action="." method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Signing up</h4>
+                <hr />
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.password.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.password }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.phone.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.phone }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.address.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.address }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.birthdate.label_tag }}
+                    <div class="col-md-10">
+                        {{ form.birthdate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

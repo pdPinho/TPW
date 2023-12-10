@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Publisher: 
+    <h4>{{ publisher }}</h4>
+</h2><br>
+<h2>Authors:
+</h2>
+{% for each in publisher_authors %}
+<h5><a href="/authors/{{ each }}">- {{ each }}</a></h5>
+{% endfor %}
+
+
+{% endblock %}

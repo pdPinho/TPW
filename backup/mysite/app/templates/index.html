@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {#    {% if user.is_superuser %}#}
+    {#        <p><a href='/functionalities/admin/users'>view users</a></p>#}
+    {#        <p><a href='/functionalities/admin/bookings'>view bookings</a></p>#}
+    {#        <p><a href='/functionalities/admin/rooms'>view rooms</a></p>#}
+    {#        <p><a href='/functionalities/admin/reviews'>view reviews</a></p>#}
+    {#    {% endif %}#}
+
+    <div class="mb-4">
+        <img src="{% static 'images/HotelCincoEstrelas.png' %}" alt="Hotel Cinco Estrelas"
+             class="object-fit-cover rounded-4 home-img">
+
+        <div class="d-block awful">
+            <h1 class="text-left">Bem-vindo ao Hotel Cinco Estrelas</h1>
+            <p class="lead">Faça uma reserva</p>
+            <form method="POST" class="input-group shadow-lg">
+                {% csrf_token %}
+                <input type="text" class="form-control" placeholder="Data Inicial">
+                <input type="text" class="form-control" placeholder="Data Final">
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </form>
+        </div>
+
+        <div class="d-flex flex-row my-5">
+            <div>
+                <h2 class="fw-semibold">Acerca de Nós</h2>
+                <p class="lead">
+                    Bem-vindo ao nosso oásis de luxo em pleno coração de Portugal. O nosso hotel 5 estrelas é um refúgio
+                    de
+                    elegância e sofisticação, criado para satisfazer os gostos mais exigentes. Com uma localização
+                    privilegiada,
+                    oferecemos aos nossos hóspedes uma experiência única, combinando a beleza da arquitetura clássica
+                    com as
+                    comodidades modernas mais requintadas.
+                </p>
+            </div>
+            <img src="{% static 'images/entrance.jpg' %}" alt="Hotel Entrance" class="about-img ms-5">
+        </div>
+        <hr/>
+        <div class="d-flex flex-row my-5">
+            <img src="{% static 'images/lisbon.jpg' %}" alt="Lisbon Center" class="about-img me-5">
+            <div>
+                <h2 class="fw-semibold">A Nossa Localização</h2>
+                <p class="lead">
+                    Desfrute de uma localização verdadeiramente privilegiada. O nosso hotel 5 estrelas está
+                    perfeitamente
+                    situado para lhe proporcionar acesso rápido e fácil aos tesouros da região. Imagine-se a acordar com
+                    vistas
+                    deslumbrantes da paisagem circundante, onde o mar encontra a terra, ou as colinas verdes se estendem
+                    até
+                    onde a vista alcança. Os nossos hóspedes têm à sua disposição uma infinidade de atividades locais
+                    para
+                    explorar, desde passeios a cavalo nas montanhas, degustações de vinhos em adegas de renome, até
+                    noites
+                    vibrantes na cidade. Queremos que a sua estadia seja uma experiência completa, aproveitando ao
+                    máximo tudo o
+                    que a nossa localização privilegiada tem para oferecer.
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <div class="d-flex flex-row mt-5">
+            <div>
+                <h2 class="fw-semibold">O Nosso Compromisso</h2>
+                <p class="lead">
+                    No nosso hotel de 5 estrelas, o seu conforto e satisfação são a nossa prioridade. Oferecemos
+                    instalações de
+                    classe mundial, restaurantes gourmet, spas relaxantes e um serviço de classe internacional. Este é o
+                    lugar
+                    onde os sonhos se tornam realidade, e estamos empenhados em proporcionar a cada hóspede uma
+                    experiência que
+                    transcende todas as expectativas. Venha desfrutar da nossa hospitalidade de classe mundial e
+                    mergulhe no
+                    luxo inigualável do nosso hotel em Portugal.
+                </p>
+            </div>
+            <img src="{% static 'images/pool.jpg' %}" alt="Hotel Pool" class="about-img ms-5">
+        </div>
+    </div>
+
+{% endblock %}

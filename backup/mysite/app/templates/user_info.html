@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <h1>{{ message }}</h1>
+    {% endfor %}
+    <a href="{% url 'view_users' %}">Return to user list</a>
+{% else %}
+    <h4>Editing user: {{ user }} </h4>
+    <h2>Name: 
+        <h4>{{ name }}</h4>
+    </h2><br>
+    <h2>Email:
+        <h4>{{ email }}</h4>
+    </h2><br>
+    <h2>Password:
+        <h4>{{ password }}</h4>
+    </h2><br>
+    <h2>Phone:
+        <h4>{{ phone }}</h4>
+    </h2><br>
+    <h2>Address:
+        <h4>{{ address }}</h4>
+    </h2><br>
+    <h2>Birthdate:
+        <h4>{{ birthdate }}</h4>
+    </h2>
+    
+    
+    <a href="edit"><h2>Edit user</h2></a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit" name="delete_button" value="delete">Delete user</button>
+    </form>
+{% endif %}
+
+{% endblock %}

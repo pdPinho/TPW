@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}
+{% if text %}
+<h4>{{ text }}</h4>
+{% else %}
+{% for eachBook in books %}
+<h5><a href="{{ eachBook }}">- {{ eachBook }}</a></h5>
+{% endfor %}
+
+<section id="insbookForm">
+    <form action="." method="post">
+        {% csrf_token %}
+        <input type="submit" value="Buy all" />
+    </form>
+</section>
+{% endif %}
+{% endblock %}

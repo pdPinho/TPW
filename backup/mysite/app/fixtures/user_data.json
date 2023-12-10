@@ -1,0 +1,62 @@
+[
+    {
+        "model": "app.User",
+        "pk": 1,
+        "fields": {
+            "name": "Admin",
+            "email": "admin@gmail.com",
+            "password": "admin",
+            "phone": "234039729",
+            "address": "Street of admins",
+            "birthdate": "1993-02-15"
+        }
+    },
+    {
+        "model": "app.User",
+        "pk": 2,
+        "fields": {
+            "name": "Jennifer",
+            "email": "jennifer@gmail.com",
+            "password": "password",
+            "phone": "123123123",
+            "address": "Rua de portugal",
+            "birthdate": "1992-02-15"
+        }
+    },
+    {
+        "model": "app.User",
+        "pk": 3,
+        "fields": {
+            "name": "Rock",
+            "email": "rock@gmail.com",
+            "password": "password",
+            "phone": "234937119",
+            "address": "Rua dos figos",
+            "birthdate": "1999-07-11"
+        }
+    },
+    {
+        "model": "app.User",
+        "pk": 4,
+        "fields": {
+            "name": "Ana",
+            "email": "ana@gmail.com",
+            "password": "password",
+            "phone": "918378195",
+            "address": "Beco das nações",
+            "birthdate": "1997-06-15"
+        }
+    },
+    {
+        "model": "app.User",
+        "pk": 5,
+        "fields": {
+            "name": "Joaquim",
+            "email": "joaquim@gmail.com",
+            "password": "password",
+            "phone": "234039729",
+            "address": "Avenida dos Aliados",
+            "birthdate": "2001-09-09"
+        }
+    }
+]

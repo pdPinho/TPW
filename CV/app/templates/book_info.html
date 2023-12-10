@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Tittle: <h4>{{ title }}</h4></h2><br>
+<h2>Authors:
+    <h4>
+        {% for each in authors %}
+            {{ each }}<br>
+        {% endfor %}
+    </h4>
+</h2><br>
+<h2>Publisher:
+    <h4>{{ publisher }}</h4>
+</h2><br>
+<h2>Date:
+    <h4>{{ date }}</h4>
+</h2>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>{{ title }}:</h2>
+    {% for review in reviews %}
+        <div class="card">
+            <div class="card-body">
+                <span class="fa fa-star {% if review.rating > 0 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if review.rating > 1 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if review.rating > 2 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if review.rating > 3 %} checked {% endif %}" ></span>
+                <span class="fa fa-star {% if review.rating > 4 %} checked {% endif %}"></span>
+                <h5>{{ review }}</h5>
+                <p>{{ review.user.name }} - {{ review.date }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.review.label }}
+            <ul class="btn btn-dark list-inline rating-list" id="stars">
+                <li>
+                    <i onclick="check_stars(this)" class="fa fa-star" title="1"></i>
+                    <i onclick="check_stars(this)" class="fa fa-star" title="2"></i>
+                    <i onclick="check_stars(this)" class="fa fa-star" title="3"></i>
+                    <i onclick="check_stars(this)" class="fa fa-star" title="4"></i>
+                    <i onclick="check_stars(this)" class="fa fa-star" title="5"></i>
+                </li>
+              </ul>
+            {{ form.review }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    {% endif %}
+
+{% endblock %}

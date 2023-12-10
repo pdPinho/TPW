@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>Search by: <strong>{{ query }}</strong></p>
+
+{% if author_publisher_books %}
+<p>Found {{ author_publisher_books|length }} books{{ author_publisher_books| pluralize }} from author: {{ author }}; and publisher: {{ publisher }}.</p>
+<ul>
+    {% for book in author_publisher_books %}
+        <li>{{ book.title}}</li>
+        <br>
+    {% endfor %}
+</ul>
+{% else %}
+    {% if author_books %}
+    <p>Found {{ author_books|length }} books{{ author_books| pluralize }} from author: {{ author }}.</p>
+    <ul>
+        {% for book in author_books %}
+            <li>{{ book.title}}</li>
+            <br>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    {% if publisher_books %}
+    <p>Found {{ publisher_books|length }} books{{ publisher_books| pluralize }} from publisher: {{ publisher }}.</p>
+    <ul>
+        {% for book in publisher_books %}
+            <li>{{ book.title}}</li>
+            <br>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

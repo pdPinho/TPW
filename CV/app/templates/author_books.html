@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Author: 
+    <h4>{{ author }}</h4>
+</h2><br>
+<h2>Books:
+</h2>
+{% for each in author_books %}
+<h5><a href="/books/{{ each }}">- {{ each }}</a></h5>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <h1>{{ message }}</h1>
+    {% endfor %}
+    <a href="{% url 'view_reviews' %}">Return to review list</a>
+{% else %}
+    <h2>Name: 
+        <h4>{{ name }}</h4>
+    </h2><br>
+    <h2>Date:
+        <h4>{{ date }}</h4>
+    </h2><br>
+    <h2>Review:
+        <h4>{{ review }}</h4>
+    </h2>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit" name="delete_button" value="delete">Delete review</button>
+    </form>
+{% endif %}
+
+{% endblock %}

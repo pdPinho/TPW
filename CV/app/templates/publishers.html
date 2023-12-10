@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ tittle }}</h2>
+{% for each in publishers %}
+<h5><a href="{{ each }}">- {{ each }}</a> - <a href="{{ each }}/authors">Authors</a></h5>
+{% endfor %}
+
+
+{% endblock %}

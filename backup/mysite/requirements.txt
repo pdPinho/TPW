@@ -1,0 +1,3 @@
+Django
+django-icons
+fontawesomefree==6.4.2

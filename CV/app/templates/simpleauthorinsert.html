@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Insert user</h2>
+<form action="." method="post">
+    {% csrf_token %}
+    <p>Name:</p>
+    <input type="text" name="name">
+    <p>Email:</p>
+    <input type="text" name="email">
+    <br />
+    <input type="submit" value="Submit">
+</form>
+
+{% if insert %}
+    <p style="text-align:center">User inserted successfully</p>
+{% endif %}
+
+{% if error %}
+    <p>Error happened, simple forms are sad</p>
+{% endif %}
+{% endblock %}
